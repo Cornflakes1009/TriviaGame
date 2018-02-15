@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Parryotter;
+    src: url(ParryHotter.ttf);
+}
+h1{
+    font-family: ParryHotter;
+}
+
+body {
+    background-color: red;
+}
