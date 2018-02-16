@@ -27,25 +27,23 @@ h1{
     font-size: 50px;
 }
 .game-section {
-    /* display: none; */
+    display: none;
 }
 .start-button {
-    /* position: absolute;
-    top: 50%; 
-    left: 50%;
-     */
-    width: 20%;
-    margin-left: auto;
-    margin-right: auto;
     
-}
-button {
+    width: 20%;
+    /* margin-left: auto;
+    margin-right: auto; */
     border-radius: 10px;
     background-color: gold;
     cursor: pointer;
+    
+}
+button {
+    
 }
 .main-content {
-    background-color: rgb(26, 32, 40);
+    /* background-color: rgb(26, 32, 40); */
     margin: 0 100px;
 }
 
