@@ -40,19 +40,10 @@ $(document).ready(function () {
             $('#time-counter').html(timer);
         }, 1000);
         setQA();
-
 // remove first index of array after each question
-
-
-
-
-
-
-
-
-
     })
 
+    
 
 
 

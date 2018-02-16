@@ -34,13 +34,14 @@ h1{
     width: 20%;
     /* margin-left: auto;
     margin-right: auto; */
-    border-radius: 10px;
-    background-color: gold;
-    cursor: pointer;
+    
+    
     
 }
 button {
-    
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: gold;
 }
 .main-content {
     /* background-color: rgb(26, 32, 40); */
