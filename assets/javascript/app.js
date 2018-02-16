@@ -1,5 +1,9 @@
 $(document).ready(function(){
     var timer = 30;
+
+    var questAnsObj = {
+        
+    }
     $('.start-button').on('click', function() {
         $('.main-content').css("background-color", "rgb(26, 32, 40)");
         $('.start-button').css("display", "none");
