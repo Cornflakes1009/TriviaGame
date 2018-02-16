@@ -34,11 +34,13 @@ h1{
     width: 20%;
     /* margin-left: auto;
     margin-right: auto; */
-    
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: gold;
     
     
 }
-button {
+.answer-button {
     cursor: pointer;
     border-radius: 10px;
     background-color: gold;

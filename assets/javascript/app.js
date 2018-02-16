@@ -42,7 +42,11 @@ $(document).ready(function () {
         setQA();
 // remove first index of array after each question
     })
+    $('.answer-button').on('click', function(){
+        var buttonClicked = event.target.value;
+        console.log(buttonClicked);
 
+    });
     
 
 
