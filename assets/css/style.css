@@ -1,12 +1,70 @@
+/* */
+
 @font-face {
     font-family: ParryHotter;
     src: url(ParryHotter.ttf);
 }
+
+
+body {
+    background: url("../images/harry-potter-great-hall.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Kavivanar', cursive;
+    color: gold;
+    font-size: 25px;
+}
 h1{
     font-family: ParryHotter;
     padding-top: 15%;
+    color: gold;
+    font-size: 90px;
+    text-shadow: 10px 10px black;
+}
+#time-counter{
+    font-size: 50px;
+}
+.game-section {
+    /* display: none; */
+}
+.start-button {
+    /* position: absolute;
+    top: 50%; 
+    left: 50%;
+     */
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+button {
+    border-radius: 10px;
+    background-color: gold;
+    cursor: pointer;
+}
+.main-content {
+    background-color: rgb(26, 32, 40);
+    margin: 0 100px;
 }
 
-body {
-    background-image: url("../images/harry-potter-background-image.png");
-}
+
+
+
+/*---------Media Queries---------*/
+@media (max-width: 991px) { 
+    .main-content {
+        margin: 0;
+    }
+ }
+ 
+@media (max-width: 768px) { 
+
+    .start-button {
+        width: 35%;
+        
+        
+    }
+ }
+ 
