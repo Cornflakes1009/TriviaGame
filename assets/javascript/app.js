@@ -40,10 +40,12 @@ $(document).ready(function () {
         $('.right-or-wrong').html("");
         startTimer = setInterval(function () { 
             if(timer === 0){
-                $('.gif-area').attr("src", gifArrWrong[0]);
+                
                 stopTimer();
+                $('.gif-area').css("display", "inline-block");
+                $('.gif-area').attr("src", gifArrWrong[0]);
                 //timer++; // added extra 1 because timer was going down to 14 seconds
-                restartQA(); // seems to be overriding my setting of the gif
+                restartQA(); 
                 console.log('break');
                 
                 
@@ -52,13 +54,13 @@ $(document).ready(function () {
     }
         function restartQA() {
             $('.right-or-wrong').html("Sorry. You're out of time. The answer was " + questions[0].answer);
-            setTimeout(function(){ setQA; }, 5000);
+            setTimeout(function(){ setQA(); }, 5000);
         }
     var startTimer;
     // stops timer, sets time back to 30, and updates html
     function stopTimer() {
         clearInterval(startTimer);
-        timer = 15;
+        timer = 16;
         $('#time-counter').html(timer);
     }
     
