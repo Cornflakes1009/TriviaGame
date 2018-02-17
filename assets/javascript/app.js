@@ -25,13 +25,14 @@ $(document).ready(function () {
     var questionSix = new Card("What type of car is Mr Weasley's flying car?", 'Ford Anglia', ['Rolls Royce', 'Mini Cooper', 'Ford Anglia', 'Volkswagen Beetle']);
 
     var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix];
+    var questionCounter = 0;
 
     function setQA() {
-        $('.question-text').html(questions[0].question);
-        $('.answer-text1').html(questions[0].choices[0]);
-        $('.answer-text2').html(questions[0].choices[1]);
-        $('.answer-text3').html(questions[0].choices[2]);
-        $('.answer-text4').html(questions[0].choices[3]);
+        $('.question-text').html(questions[questionCounter].question);
+        $('.answer-text1').html(questions[questionCounter].choices[0]);
+        $('.answer-text2').html(questions[questionCounter].choices[1]);
+        $('.answer-text3').html(questions[questionCounter].choices[2]);
+        $('.answer-text4').html(questions[questionCounter].choices[3]);
         ///// - content below from start button clicked
         $('.main-content').css("background-color", "rgb(26, 32, 40)");
         $('.start-button').css("display", "none");
