@@ -49,7 +49,11 @@ h1{
     /* background-color: rgb(26, 32, 40); */
     margin: 0 100px;
 }
-
+.gif-area {
+    width: 250px;
+    height: 250px;
+    display: none;
+}
 
 
 
