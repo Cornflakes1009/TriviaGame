@@ -32,32 +32,35 @@ $(document).ready(function () {
     var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix];
 
     function setQA() {
-        $('.answer-button').css("display", "inline-block");
-        $('.question-text').html(questions[questionCounter].question);
-        $('.answer-text1').html(questions[questionCounter].choices[0]);
-        $('.answer-text2').html(questions[questionCounter].choices[1]);
-        $('.answer-text3').html(questions[questionCounter].choices[2]);
-        $('.answer-text4').html(questions[questionCounter].choices[3]);
-        $('.main-content').css("background-color", "rgb(26, 32, 40)");
-        $('.start-button').css("display", "none");
-        $('.game-section').css("display", "block");
-        $('.gif-area').css("display", "none");
-        $('.right-or-wrong').html("");
-        startTimer = setInterval(function () {
-            if (timer === 0) {
-                timedOut++;
-                checkScore();
-                gifCounter++;
-                questionCounter++;
-                stopTimer();
-                $('.gif-area').css("display", "inline-block");
-                $('.answer-button').css("display", "none");
-                $('.gif-area').attr("src", gifArrWrong[gifCounter]);
-                restartQA();
-                console.log('break');
-            }
-            timer--; $('#time-counter').html(timer);
-        }, 1000);
+        if ((correct + incorrect + timedOut) !== questions.length) {
+            $('.answer-button').css("display", "inline-block");
+            $('.question-text').html(questions[questionCounter].question);
+            $('.answer-text1').html(questions[questionCounter].choices[0]);
+            $('.answer-text2').html(questions[questionCounter].choices[1]);
+            $('.answer-text3').html(questions[questionCounter].choices[2]);
+            $('.answer-text4').html(questions[questionCounter].choices[3]);
+            $('.main-content').css("background-color", "rgb(26, 32, 40)");
+            $('.start-button').css("display", "none");
+            $('.game-section').css("display", "block");
+            $('.gif-area').css("display", "none");
+            $('.right-or-wrong').html("");
+            startTimer = setInterval(function () {
+                if (timer === 0) {
+                    timedOut++;
+                    checkScore();
+                    gifCounter++;
+                    questionCounter++;
+                    stopTimer();
+                    $('.gif-area').css("display", "inline-block");
+                    $('.answer-button').css("display", "none");
+                    $('.gif-area').attr("src", gifArrWrong[gifCounter]);
+                    restartQA();
+                    console.log('break');
+                }
+                $('#time-counter').html(timer);
+                timer--;
+            }, 1000);
+        }
     }
     function restartQA() {
         $('.right-or-wrong').html("Sorry. You're out of time. The answer was " + questions[questionCounter - 1].answer + ".");
@@ -70,7 +73,7 @@ $(document).ready(function () {
     }
     $('.start-button').on('click', function () {
         setQA();
-    }) 
+    })
     $('.answer-button').on('click', function () {
         var buttonClicked = event.target.innerHTML;
         stopTimer();
@@ -88,17 +91,17 @@ $(document).ready(function () {
             $('.gif-area').attr("src", gifArrWrong[gifCounter]);
             $('.gif-area').css("display", "inline-block");
         }
-        delay = setTimeout(function () { setQA(); }, 5000);
+        delay = setTimeout(function () {
+            setQA();
+        }, 5000);
         checkScore();
         gifCounter++;
         questionCounter++;
-    }); 
+    });
     function checkScore() {
         if ((correct + incorrect + timedOut) === questions.length) {
             clearTimeout(delay);
             $('.question-text').css("display", "none");
-            //$('#time-counter').css("display", "none");
-            $('.answer-button').css("display", "none");
             $('.reset-button').css("display", "inline-block");
             $('.correct').html("Correct: " + correct);
             $('.incorrect').html("Incorrect: " + incorrect);
