@@ -54,6 +54,12 @@ h1{
     height: 250px;
     display: none;
 }
+.reset-button {
+    display: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: gold;
+}
 
 
 
