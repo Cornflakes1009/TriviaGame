@@ -113,7 +113,7 @@ $(document).ready(function () {
             $('.incorrect').css("display", "inline-block");
             $('.timedout').css("display", "inline-block");
             $('.answer-button').css("display", "none");
-            //return;
+            
         }
     }
     $('.reset-button').on('click', function () {
