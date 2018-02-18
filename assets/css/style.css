@@ -1,11 +1,7 @@
-/* */
-
 @font-face {
     font-family: ParryHotter;
     src: url(ParryHotter.ttf);
 }
-
-
 body {
     background: url("../images/harry-potter-great-hall.png") no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -23,59 +19,37 @@ h1{
     font-size: 90px;
     text-shadow: 10px 10px black;
 }
+.main-content {
+    margin: 0 100px;
+}
 #time-counter{
     font-size: 50px;
 }
 .game-section {
     display: none;
 }
-.start-button {
-    
-    width: 20%;
-    /* margin-left: auto;
-    margin-right: auto; */
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: gold;
-    
-    
-}
-.answer-button {
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: gold;
-}
-.main-content {
-    /* background-color: rgb(26, 32, 40); */
-    margin: 0 100px;
-}
 .gif-area {
     width: 250px;
     height: 250px;
     display: none;
 }
-.reset-button {
-    display: none;
+button {
     cursor: pointer;
     border-radius: 10px;
     background-color: gold;
+    min-width: 30%;
 }
-
-
-
-/*---------Media Queries---------*/
+.reset-button {
+    display: none;
+}
 @media (max-width: 991px) { 
     .main-content {
         margin: 0;
     }
  }
- 
 @media (max-width: 768px) { 
-
-    .start-button {
-        width: 35%;
-        
-        
+    button {
+        min-width: 60%;
     }
  }
  
