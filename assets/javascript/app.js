@@ -46,9 +46,10 @@ $(document).ready(function () {
         $('.right-or-wrong').html("");
         startTimer = setInterval(function () {
             if (timer === 0) {
+                timedOut++;
+                checkScore();
                 gifCounter++;
                 questionCounter++;
-                timedOut++;
                 stopTimer();
                 $('.gif-area').css("display", "inline-block");
                 $('.answer-button').css("display", "none");
@@ -93,7 +94,7 @@ $(document).ready(function () {
         }
         // moved from 105
         delay = setTimeout(function () { setQA(); }, 5000);
-        checkScore(); 
+        checkScore();
         gifCounter++;
         questionCounter++;
     }); // end of answer button being clicked
@@ -106,8 +107,8 @@ $(document).ready(function () {
             $('.answer-button').css("display", "none");
             $('.reset-button').css("display", "inline-block");
             $('.correct').html("Correct: " + correct);
-            $('.incorrect').html("Incorrect: " + correct);
-            $('.timedout').html("Timed Out: " + correct);
+            $('.incorrect').html("Incorrect: " + incorrect);
+            $('.timedout').html("Timed Out: " + timedOut);
             $('.correct').css("display", "inline-block");
             $('.incorrect').css("display", "inline-block");
             $('.timedout').css("display", "inline-block");
@@ -115,6 +116,19 @@ $(document).ready(function () {
             //return;
         }
     }
+    $('.reset-button').on('click', function () {
+        $('.question-text').css("display", "inline-block");
+        $('.reset-button').css("display", "none");
+        $('.correct').css("display", "none");
+        $('.incorrect').css("display", "none");
+        $('.timedout').css("display", "none");
+        correct = 0;
+        incorrect = 0;
+        timedOut = 0;
+        gifCounter = 0;
+        questionCounter = 0;
+        setQA();
+    })
 }); // end of document ready function
 
 // display h1 and button
