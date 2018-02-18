@@ -17,7 +17,6 @@ $(document).ready(function () {
         this.answer = answer;
         this.choices = choices;
     }
-
     var questionOne = new Card("Who was Ginny Weasley's first boyfriend?", 'Michael Corner', ['Harry Potter', 'Dean Thomas', "Neville Longbottom", 'Michael Corner']);
 
     var questionTwo = new Card("What is the name of Voldemort's snake?", "Nagini", ['Nagini', 'Bellatrix', 'Goyle', 'Colin']);
@@ -64,7 +63,6 @@ $(document).ready(function () {
         $('.right-or-wrong').html("Sorry. You're out of time. The answer was " + questions[questionCounter - 1].answer + ".");
         setTimeout(function () { setQA(); }, 5000);
     }
-    // stops timer, sets time back to 30, and updates html
     function stopTimer() {
         timer = 15;
         clearInterval(startTimer);
@@ -72,9 +70,7 @@ $(document).ready(function () {
     }
     $('.start-button').on('click', function () {
         setQA();
-        // remove first index of array after each question
-    }) // end of start button being clicked
-
+    }) 
     $('.answer-button').on('click', function () {
         var buttonClicked = event.target.innerHTML;
         stopTimer();
@@ -92,13 +88,11 @@ $(document).ready(function () {
             $('.gif-area').attr("src", gifArrWrong[gifCounter]);
             $('.gif-area').css("display", "inline-block");
         }
-        // moved from 105
         delay = setTimeout(function () { setQA(); }, 5000);
         checkScore();
         gifCounter++;
         questionCounter++;
-    }); // end of answer button being clicked
-
+    }); 
     function checkScore() {
         if ((correct + incorrect + timedOut) === questions.length) {
             clearTimeout(delay);
@@ -113,7 +107,6 @@ $(document).ready(function () {
             $('.incorrect').css("display", "inline-block");
             $('.timedout').css("display", "inline-block");
             $('.answer-button').css("display", "none");
-            
         }
     }
     $('.reset-button').on('click', function () {
@@ -129,12 +122,4 @@ $(document).ready(function () {
         questionCounter = 0;
         setQA();
     })
-}); // end of document ready function
-
-// display h1 and button
-// click start and button disappears
-// question 1 shows up with 4 answers and timer starts counting down
-// user clicks answer and they get a message if they got it right or wrong - right will display a gif of a happy harry potter moment,
-// - wrong will display a bad moment
-// wait 5 seconds and show a new question with new answers
-// go through all 6 questions and get a total score screen
+}); 
