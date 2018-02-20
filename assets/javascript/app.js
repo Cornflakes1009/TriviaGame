@@ -8,6 +8,7 @@ $(document).ready(function () {
     var gifCounter = 0;
     var questionCounter = 0;
     var delay;
+    var hpThemeMusic = new Audio('assets/HPtheme.mp3');
 
     var gifArrCorrect = ["assets/images/happy-snape.gif", "assets/images/dumbledore.gif", "assets/images/rawr.gif", "assets/images/invisible.gif", "assets/images/boom.gif", "assets/images/flying.gif"];
     var gifArrWrong = ["assets/images/voldemort.gif", "assets/images/explosion-hermione.gif", "assets/images/umbridge.gif", "assets/images/slappy-snape.gif", "assets/images/obviously.gif", "assets/images/werewolf.gif"];
@@ -73,6 +74,8 @@ $(document).ready(function () {
     }
     $('.start-button').on('click', function () {
         setQA();
+        hpThemeMusic.load();
+        hpThemeMusic.play();
     })
     $('.answer-button').on('click', function () {
         var buttonClicked = event.target.innerHTML;
@@ -124,5 +127,7 @@ $(document).ready(function () {
         gifCounter = 0;
         questionCounter = 0;
         setQA();
+        hpThemeMusic.load();
+        hpThemeMusic.play();
     })
 }); 
