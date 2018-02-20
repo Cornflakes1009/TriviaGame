@@ -1,3 +1,6 @@
+
+TURN UP THE VOLUME!
+
 This is a simple Harry Potter trivia game.
 
 Guess the question correctly and receive a "happy" gif. 
